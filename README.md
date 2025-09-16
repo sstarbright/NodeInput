@@ -8,7 +8,7 @@
  This package contains a bunch of Nodes that allow you to construct input mappings in Godot in a scene, with Nodes and Signals, rather than using the clunky Input Map section of your project's Project Settings.
  
 
- How to use:
+ ## How to use:
  
  1. Create an InputValue (Could be Bool, Float, or Vector. There are more values than this, but they are mainly used internally)
  2. Add an InputSource as a child of the InputValue. (Could be a button or axis from controller, mouse, or keyboard)
@@ -17,10 +17,10 @@
  5. Have fun!
 
 
-Certain sources will interact with certain values in different ways:
+## Interactions between Sources and Values
 
 
-Buttons/Keys
+### Buttons/Keys
 
 They will translate to a float or vector value from 0.0 to either 1.0 or -1.0, depending on how you set the Contribution variable.
 
@@ -31,7 +31,7 @@ For floats, a contribution of Positive will result in 1.0 being added to the out
 For Vectors, a contribution of any direction will result in adding 1.0x the direction's sign in Godot's Vector2 format
 
 
-Axis
+### Axis
 
 For bools, they will output a true if the axis is past the Deadzone setting, and a false if it is within the Deadzone.
 
@@ -40,10 +40,15 @@ For floats, they will return their raw value, but values within the Deadzone wil
 For Vectors, they will output their value like with floats, but contribution will choose whether the axis contributes to the X coordinate or Y coordinate of the Vector2.
 
 
-Axis2
+### Axis2
 
 For bools, they will output a true if the magnitude of the two axes' direction vector is past the Deadzone setting, and a false if it is within the Deadzone.
 
 For floats, they will output the magnitude of the two axes' direction vector.
 
 For Vectors, they will output the expected raw value, but deadzoned based on the Deadzone variable.
+
+
+## Known Issues
+
+Cursor sources are scuffed, I'll try to fix them eventually.
