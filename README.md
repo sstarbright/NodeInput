@@ -22,8 +22,6 @@
 
 ### Buttons/Keys
 
-They will translate to a float or vector value from 0.0 to either 1.0 or -1.0, depending on how you set the Contribution variable.
-
 For bools, they will behave as you would expect. True when pressed, False when released.
 
 For floats, a contribution of Positive will result in 1.0 being added to the output, while Negative will result in -1.0 being added instead.
@@ -51,4 +49,4 @@ For Vectors, they will output the expected raw value, but deadzoned based on the
 
 ## Known Issues
 
-Cursor sources are scuffed, I'll try to fix them eventually.
+- Cursor sources are scuffed, I'll try to fix them eventually.
