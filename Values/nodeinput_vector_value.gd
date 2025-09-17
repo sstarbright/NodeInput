@@ -90,7 +90,7 @@ func _physics_process(_delta):
 	for source in sources:
 		source.vector()
 		if (source.changed):
-			current = source.current.normalized()
+			current = source.current.normalized() * source.current.length()
 			changed = true
 			break
 	input_updated.emit(current, previous)
