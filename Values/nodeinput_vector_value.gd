@@ -2,8 +2,6 @@ class_name InputVector
 extends InputValue
 ## An input value node that outputs a boolean.
 
-@export var length_limit = 1.0
-
 var collecting_half = false
 var collecting_half_index = 0
 var collecting_half_count = 0
@@ -92,7 +90,7 @@ func _physics_process(_delta):
 	for source in sources:
 		source.vector()
 		if (source.changed):
-			current = source.current.limit_length(length_limit)
+			current = source.current.normalized()
 			changed = true
 			break
 	input_updated.emit(current, previous)
