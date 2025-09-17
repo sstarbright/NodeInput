@@ -1,5 +1,6 @@
 class_name InputFloat
 extends InputValue
+## An input value node that outputs a float.
 
 var collecting_half = false
 var collecting_half_index = 0

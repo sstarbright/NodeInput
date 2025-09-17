@@ -1,5 +1,6 @@
 class_name InputBool
 extends InputValue
+## An input value node that outputs a boolean.
 
 signal on_down()
 signal on_up()

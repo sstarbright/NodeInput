@@ -1,5 +1,6 @@
 class_name InputVector
 extends InputValue
+## An input value node that outputs a boolean.
 
 @export var length_limit = 1.0
 

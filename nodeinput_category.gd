@@ -1,3 +1,6 @@
-@icon ("res://Cosma32Library/Packages/NodeInput/Icons/nodeinput_controller.svg") 
+@icon ("res://NodeInput/Icons/nodeinput_controller.svg")
 class_name NodeInput
 extends Node
+## Base class for all input nodes.
+##
+## DO NOT USE.

@@ -1,5 +1,8 @@
 class_name InputValue
 extends NodeInput
+## Base class for all input values.
+##
+## DO NOT USE.
 
 var sources = []
 var disabled_sources = []
