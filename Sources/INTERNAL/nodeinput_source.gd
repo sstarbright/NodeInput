@@ -1,8 +1,7 @@
+@abstract
 class_name InputSource
 extends NodeInput
 ## Base class for all input sources.
-##
-## DO NOT USE.
 
 enum InputValueSize {
 	HALF,

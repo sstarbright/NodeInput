@@ -1,5 +1,6 @@
 class_name InputButton
 extends InputSource
+## A controller button source.
 
 enum InputButtonContribution {
 	UP_OR_POSITIVE,

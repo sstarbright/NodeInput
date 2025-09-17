@@ -1,6 +1,6 @@
 class_name InputVector
 extends InputValue
-## An input value node that outputs a boolean.
+## An input value node that outputs a vector.
 
 var collecting_half = false
 var collecting_half_index = 0
@@ -43,24 +43,24 @@ func _ready():
 						match child.contribution:
 							0:
 								sources[collecting_half_index].y_neg = child
-								sources[collecting_half_index].y_pos = InputSource.new()
-								sources[collecting_half_index].x_neg = InputSource.new()
-								sources[collecting_half_index].x_pos = InputSource.new()
+								sources[collecting_half_index].y_pos = InputEmpty.new()
+								sources[collecting_half_index].x_neg = InputEmpty.new()
+								sources[collecting_half_index].x_pos = InputEmpty.new()
 							1:
 								sources[collecting_half_index].y_pos = child
-								sources[collecting_half_index].y_neg = InputSource.new()
-								sources[collecting_half_index].x_neg = InputSource.new()
-								sources[collecting_half_index].x_pos = InputSource.new()
+								sources[collecting_half_index].y_neg = InputEmpty.new()
+								sources[collecting_half_index].x_neg = InputEmpty.new()
+								sources[collecting_half_index].x_pos = InputEmpty.new()
 							2:
 								sources[collecting_half_index].x_neg = child
-								sources[collecting_half_index].y_pos = InputSource.new()
-								sources[collecting_half_index].y_neg = InputSource.new()
-								sources[collecting_half_index].x_pos = InputSource.new()
+								sources[collecting_half_index].y_pos = InputEmpty.new()
+								sources[collecting_half_index].y_neg = InputEmpty.new()
+								sources[collecting_half_index].x_pos = InputEmpty.new()
 							_:
 								sources[collecting_half_index].x_pos = child
-								sources[collecting_half_index].y_pos = InputSource.new()
-								sources[collecting_half_index].y_neg = InputSource.new()
-								sources[collecting_half_index].x_neg = InputSource.new()
+								sources[collecting_half_index].y_pos = InputEmpty.new()
+								sources[collecting_half_index].y_neg = InputEmpty.new()
+								sources[collecting_half_index].x_neg = InputEmpty.new()
 				InputSource.InputValueSize.SINGLE:
 					if collecting_single:
 						collecting_single = false
@@ -76,9 +76,9 @@ func _ready():
 						sources[collecting_single_index].name = "SingleToDouble" + str(num_singles)
 						if child.contribution < 1:
 							sources[collecting_single_index].x = child
-							sources[collecting_single_index].y = InputSource.new()
+							sources[collecting_single_index].y = InputEmpty.new()
 						else:
-							sources[collecting_single_index].x = InputSource.new()
+							sources[collecting_single_index].x = InputEmpty.new()
 							sources[collecting_single_index].y = child
 				_:
 					sources.append(child)

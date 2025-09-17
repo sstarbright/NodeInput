@@ -1,5 +1,6 @@
 class_name InputCursorAxis
 extends InputSource
+## A mouse axis source (broken).
 
 enum InputAxisContribution {
 	X_OR_UP,

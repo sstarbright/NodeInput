@@ -1,5 +1,6 @@
 class_name InputCursor
 extends InputSource
+## A mouse axis source (broken).
 
 const SCREEN_CENTER = Vector2(0.5, 0.5)
 

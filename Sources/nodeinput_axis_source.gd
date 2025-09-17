@@ -1,5 +1,6 @@
 class_name InputAxis
 extends InputSource
+## A controller single-axis source.
 
 enum InputAxisContribution {
 	X_OR_UP,

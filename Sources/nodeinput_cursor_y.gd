@@ -1,4 +1,5 @@
 class_name InputCursorAxisY
+## A mouse axis source (broken).
 
 var cursor_pos = 0.0
 var sensitivity

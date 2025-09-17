@@ -1,5 +1,6 @@
 class_name InputAxis2
 extends InputSource
+## A controller dual-axis source.
 
 var controller = 0
 @export var x_axis := JOY_AXIS_LEFT_X

@@ -1,5 +1,6 @@
 class_name InputKey
 extends InputSource
+## A keyboard key source.
 
 enum InputKeyContribution {
 	UP_OR_POSITIVE,

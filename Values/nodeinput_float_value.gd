@@ -29,9 +29,9 @@ func _ready():
 					
 					if child.contribution < 1:
 						sources[collecting_half_index].pos = child
-						sources[collecting_half_index].neg = InputSource.new()
+						sources[collecting_half_index].neg = InputEmpty.new()
 					else:
-						sources[collecting_half_index].pos = InputSource.new()
+						sources[collecting_half_index].pos = InputEmpty.new()
 						sources[collecting_half_index].neg = child
 					
 			else:

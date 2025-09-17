@@ -1,5 +1,6 @@
 class_name InputClick
 extends InputSource
+## A mouse click source.
 
 enum InputButtonContribution {
 	UP_OR_POSITIVE,
