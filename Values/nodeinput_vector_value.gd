@@ -14,7 +14,11 @@ var num_singles = 0
 signal input_updated(current : Vector2, last : Vector2)
 
 func _ready():
-	var children = get_children()
+	add_source_children(get_children())
+	
+	current = Vector2.ZERO
+
+func add_source_children(children : Array[Node]):
 	for child in children:
 		if child is InputSource:
 			child.current = Vector2.ZERO
@@ -83,7 +87,8 @@ func _ready():
 				_:
 					sources.append(child)
 					child.start(self)
-	current = Vector2.ZERO
+		else:
+			add_source_children(child.get_children())
 
 func _physics_process(_delta):
 	previous = current

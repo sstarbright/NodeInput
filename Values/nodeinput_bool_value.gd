@@ -11,16 +11,20 @@ var up = false
 var ignore_next_frame = false
 
 func _ready():
-	var children = get_children()
-	for child in children:
-		if child is InputSource:
-			sources.append(child)
-			child.start(self)
+	add_source_children(get_children())
 	for source in sources:
 		source.bool()
 		current = source.current
 		if current:
 			break
+
+func add_source_children(children : Array[Node]):
+	for child in children:
+		if child is InputSource:
+			sources.append(child)
+			child.start(self)
+		else:
+			add_source_children(child.get_children())
 
 func _physics_process(delta):
 	super._physics_process(delta)

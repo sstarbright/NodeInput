@@ -9,7 +9,10 @@ var num_halfs = 0
 signal input_updated(current : float, last : float)
 
 func _ready():
-	var children = get_children()
+	add_source_children(get_children())
+	current = 0.0
+
+func add_source_children(children : Array[Node]):
 	for child in children:
 		if child is InputSource:
 			child.current = 0.0
@@ -37,7 +40,8 @@ func _ready():
 			else:
 				sources.append(child)
 				child.start(self)
-	current = 0.0
+		else:
+			add_source_children(child.get_children())
 
 func _physics_process(_delta):
 	previous = current
