@@ -13,7 +13,7 @@ enum InputAxisContribution {
 var contribution_max = 1.0
 var contribution_min = 0.0
 var contribution_vector = Vector2.UP
-var direction = 1.0
+@export var direction = 1.0
 var controller = 0
 @export var axis:= JOY_AXIS_LEFT_X
 @export var deadzone = 0.0 # (float, 0, 0.99, 0.01)
@@ -30,11 +30,9 @@ func _ready():
 	if bias > 0:
 		contribution_max = 1.0
 		contribution_min = 0.0
-		direction = 1.0
 	else:
 		contribution_max = 0.0
 		contribution_min = -1.0
-		direction = -1.0
 		
 	match contribution:
 		InputAxisContribution.X_OR_UP:
@@ -43,7 +41,7 @@ func _ready():
 			contribution_vector = Vector2.RIGHT
 
 func raw():
-	return Input.get_joy_axis(controller, axis)*direction
+	return Input.get_joy_axis(controller, axis) * direction
 
 func bool():
 	previous = current
